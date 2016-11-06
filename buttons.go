@@ -45,7 +45,7 @@ func AttachPushButton(parent Controller, id int) *PushButton {
 }
 
 func (this *PushButton) init(parent Controller) {
-    this.W32Control.init("BUTTON", parent, 0, w32.BS_DEFPUSHBUTTON|w32.WS_TABSTOP|w32.WS_VISIBLE|w32.WS_CHILD)
+    this.W32Control.init("BUTTON", parent, 0, w32.BS_PUSHBUTTON|w32.WS_TABSTOP|w32.WS_VISIBLE|w32.WS_CHILD)
     RegMsgHandler(this)
 }
 
