@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/AllenDang/gform"
+    "github.com/Ribtoks/gform"
     "time"
 )
 

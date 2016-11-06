@@ -1,8 +1,8 @@
 package main
 
 import (
-    "github.com/AllenDang/gform"
-    "github.com/AllenDang/w32"
+    "github.com/Ribtoks/gform"
+    "github.com/Ribtoks/w32"
 )
 
 var (

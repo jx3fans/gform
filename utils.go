@@ -2,7 +2,7 @@ package gform
 
 import (
 	"fmt"
-	"github.com/AllenDang/w32"
+	"github.com/Ribtoks/w32"
 	"syscall"
 	"unsafe"
 )
