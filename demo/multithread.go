@@ -17,7 +17,7 @@ func onclick(arg *gform.EventArg) {
 func setProgress() {
     btn.SetEnabled(false)
     for i := 0; i < 100; i++ {
-        pb.SetValue(uint(i))
+        pb.SetValue(uint32(i))
         time.Sleep(50 * 1E6)
     }
     btn.SetEnabled(true)
