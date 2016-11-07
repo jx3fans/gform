@@ -38,7 +38,7 @@ func genDropFilesEventArg(wparam uintptr) *DropFilesEventData {
 	return &data
 }
 
-func generalWndProc(hwnd w32.HWND, msg uint, wparam, lparam uintptr) uintptr {
+func generalWndProc(hwnd w32.HWND, msg uint32, wparam, lparam uintptr) uintptr {
 	if msg == w32.WM_INITDIALOG && gDialogWaiting != nil {
 		gDialogWaiting.hwnd = hwnd
 		RegMsgHandler(gDialogWaiting)

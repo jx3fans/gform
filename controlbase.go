@@ -8,7 +8,7 @@ type ControlBase struct {
 	hwnd          w32.HWND
 	font          *Font
 	parent        Controller
-	evtHandlerMap map[uint]EventHandler
+	evtHandlerMap map[uint32]EventHandler
 
 	isForm bool
 
@@ -192,10 +192,10 @@ func (this *ControlBase) PreTranslateMessage(msg *w32.MSG) bool {
 	return false
 }
 
-func (this *ControlBase) Bind(msg uint, handler EventHandler) {
+func (this *ControlBase) Bind(msg uint32, handler EventHandler) {
 	//Check whether map is already created
 	if this.evtHandlerMap == nil {
-		this.evtHandlerMap = make(map[uint]EventHandler)
+		this.evtHandlerMap = make(map[uint32]EventHandler)
 	}
 
 	if handler == nil {
@@ -206,7 +206,7 @@ func (this *ControlBase) Bind(msg uint, handler EventHandler) {
 }
 
 // Get binded handlers for specifed message.
-func (this *ControlBase) BindedHandler(msg uint) (EventHandler, bool) {
+func (this *ControlBase) BindedHandler(msg uint32) (EventHandler, bool) {
 	handler, ok := this.evtHandlerMap[msg]
 	return handler, ok
 }

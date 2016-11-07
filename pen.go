@@ -10,7 +10,7 @@ type Pen struct {
     brush *Brush
 }
 
-func NewPen(style uint, width uint, brush *Brush) *Pen {
+func NewPen(style uint32, width uint32, brush *Brush) *Pen {
     if brush == nil {
         panic("Brush cannot be nil")
     }

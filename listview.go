@@ -215,7 +215,7 @@ func (this *ListView) OnClick() *EventManager {
 }
 
 // Message processer
-func (this *ListView) WndProc(msg uint, wparam, lparam uintptr) uintptr {
+func (this *ListView) WndProc(msg uint32, wparam, lparam uintptr) uintptr {
 	switch msg {
 	case w32.WM_NOTIFY:
 		nm := (*w32.NMHDR)(unsafe.Pointer(lparam))

@@ -49,7 +49,7 @@ func (this *PushButton) init(parent Controller) {
     RegMsgHandler(this)
 }
 
-func (this *PushButton) WndProc(msg uint, wparam, lparam uintptr) uintptr {
+func (this *PushButton) WndProc(msg uint32, wparam, lparam uintptr) uintptr {
     switch msg {
     case w32.BN_CLICKED:
         println("Clicked")

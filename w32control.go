@@ -11,7 +11,7 @@ type W32Control struct {
 	isMouseLeft     bool
 }
 
-func (this *W32Control) init(className string, parent Controller, exstyle, style uint) {
+func (this *W32Control) init(className string, parent Controller, exstyle, style uint32) {
 	this.hwnd = CreateWindow(className, parent, exstyle, style)
 	if this.hwnd == 0 {
 		panic("cannot create window for " + className)
@@ -21,7 +21,7 @@ func (this *W32Control) init(className string, parent Controller, exstyle, style
 	this.ControlBase.init(parent)
 }
 
-func (this *W32Control) attach(parent Controller, dlgItemID int) {
+func (this *W32Control) attach(parent Controller, dlgItemID int32) {
 	if parent == nil {
 		panic("parent cannot be nil")
 	}
@@ -35,7 +35,7 @@ func (this *W32Control) attach(parent Controller, dlgItemID int) {
 	this.ControlBase.init(parent)
 }
 
-func (this *W32Control) WndProc(msg uint, wparam, lparam uintptr) uintptr {
+func (this *W32Control) WndProc(msg uint32, wparam, lparam uintptr) uintptr {
 	switch msg {
 	case w32.WM_CREATE:
 		internalTrackMouseEvent(this.hwnd)
@@ -50,5 +50,5 @@ func (this *W32Control) WndProc(msg uint, wparam, lparam uintptr) uintptr {
 		this.onMouseLeave.Fire(NewEventArg(this, nil))
 		this.isMouseLeft = true
 	}
-	return w32.CallWindowProc(this.originalWndProc, this.hwnd, uint32(msg), wparam, lparam)
+	return w32.CallWindowProc(this.originalWndProc, this.hwnd, msg, wparam, lparam)
 }

@@ -27,7 +27,7 @@ func (this *ProgressBar) Value() uint {
     return uint(ret)
 }
 
-func (this *ProgressBar) SetValue(v uint) {
+func (this *ProgressBar) SetValue(v uint32) {
     w32.SendMessage(this.hwnd, w32.PBM_SETPOS, uintptr(v), 0)
 }
 
@@ -37,6 +37,6 @@ func (this *ProgressBar) Range() (min, max uint) {
     return
 }
 
-func (this *ProgressBar) SetRange(min, max uint) {
+func (this *ProgressBar) SetRange(min, max uint32) {
     w32.SendMessage(this.hwnd, w32.PBM_SETRANGE32, uintptr(min), uintptr(max))
 }

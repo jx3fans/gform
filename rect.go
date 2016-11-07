@@ -35,7 +35,7 @@ func (this *Rect) GetW32Rect() *w32.RECT {
 	return &this.rect
 }
 
-func (this *Rect) Set(left, top, right, bottom int) {
+func (this *Rect) Set(left, top, right, bottom int32) {
 	w32.SetRect(&this.rect, left, top, right, bottom)
 }
 
@@ -43,7 +43,7 @@ func (this *Rect) IsEqual(rect *Rect) bool {
 	return w32.EqualRect(&this.rect, &rect.rect)
 }
 
-func (this *Rect) Inflate(x, y int) {
+func (this *Rect) Inflate(x, y int32) {
 	w32.InflateRect(&this.rect, x, y)
 }
 
@@ -55,11 +55,11 @@ func (this *Rect) IsEmpty() bool {
 	return w32.IsRectEmpty(&this.rect)
 }
 
-func (this *Rect) Offset(x, y int) {
+func (this *Rect) Offset(x, y int32) {
 	w32.OffsetRect(&this.rect, x, y)
 }
 
-func (this *Rect) IsPointIn(x, y int) bool {
+func (this *Rect) IsPointIn(x, y int32) bool {
 	return w32.PtInRect(&this.rect, x, y)
 }
 

@@ -29,11 +29,11 @@ type Controller interface {
     SetFont(font *Font)
     InvokeRequired() bool
     PreTranslateMessage(msg *w32.MSG) bool
-    WndProc(msg uint, wparam, lparam uintptr) uintptr
+    WndProc(msg uint32, wparam, lparam uintptr) uintptr
 
     //Bind w32 message to handler function
-    Bind(msg uint, handler EventHandler)
-    BindedHandler(msg uint) (EventHandler, bool)
+    Bind(msg uint32, handler EventHandler)
+    BindedHandler(msg uint32) (EventHandler, bool)
 
     //General events
     OnCreate() *EventManager

@@ -76,7 +76,7 @@ func ShowBrowseFolderDlg(parent Controller, title string) (folder string, accept
 	return
 }
 
-func MsgBox(parent Controller, title, caption string, flags uint) int {
+func MsgBox(parent Controller, title, caption string, flags uint32) int {
 	var result int
 	if parent != nil {
 		result = w32.MessageBox(parent.Handle(), caption, title, flags)
