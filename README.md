@@ -1,3 +1,5 @@
+This repository is a fork of (AllenDang/gform) with fixes for x64 and some other improvements
+
 # gform is an easy to use Windows GUI toolkit for Go
 It provides two approaches to create UI.
 
@@ -12,7 +14,9 @@ It provides two approaches to create UI.
     
     btn := gform.NewPushButton(mainWindow)
     btn.SetPos(10, 10)
-    btn.OnLBUp().Bind(btn_onclick)
+    btn.OnLBUp().Bind(func(args *gform.EventArg) { 
+        fmt.Println("Clicked!")
+    })
     
     mainWindow.Show()
     
@@ -33,6 +37,30 @@ It provides two approaches to create UI.
     btn.OnLBDown().Attach(onclick)
     
     gform.RunMainLoop()
+    
+# View
+##### Create Manifest `yourappname.manifest`
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+        <assemblyIdentity version="1.0.0.0" processorArchitecture="*" name="SomeFunkyNameHere" type="win32"/>
+        <dependency>
+            <dependentAssembly>
+                <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" language="*"/>
+            </dependentAssembly>
+        </dependency>
+    </assembly>
+```
+
+Then either compile the manifest using the [rsrc tool](https://github.com/akavel/rsrc), like this:
+
+	go get github.com/akavel/rsrc
+	rsrc -manifest yourappname.manifest -o rsrc.syso
+
+(`go build` is smart enough to pick it up)
+
+or rename the `yourappname.manifest` file to `yourappname.exe.manifest` and distribute it with the application instead.
 
 # Event handling
 gform provides two approaches to handle event. For most commonly used events, convenient event handler is introduced. To handle windows message directly, "Bind" mechanism is introduce.
@@ -84,9 +112,7 @@ And bind "nil" to a message is allowed.
 1. Make sure you have a working Go installation and build environment, see more for details from below page.
    http://golang.org/doc/install
    
-2. go get github.com/AllenDang/gform
-
-3. go install github.com/AllenDang/gform
+2. go get github.com/Ribtoks/gform
 
 Have fun now!
 
