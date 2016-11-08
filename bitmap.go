@@ -2,7 +2,7 @@ package gform
 
 import (
 	"errors"
-	"github.com/Ribtoks/w32"
+	"github.com/Ribtoks/winapi4go"
 	"unsafe"
 )
 

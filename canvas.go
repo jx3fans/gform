@@ -2,7 +2,7 @@ package gform
 
 import (
 	"fmt"
-	"github.com/Ribtoks/w32"
+	"github.com/Ribtoks/winapi4go"
 )
 
 type Canvas struct {

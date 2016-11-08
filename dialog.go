@@ -1,7 +1,7 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
+	"github.com/Ribtoks/winapi4go"
 )
 
 type Dialog struct {
