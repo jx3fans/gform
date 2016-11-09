@@ -2,7 +2,7 @@ package gform
 
 import (
 	"fmt"
-	"github.com/Ribtoks/winapi4go"
+	"github.com/Ribtoks/w32"
 	"syscall"
 	"unsafe"
 )

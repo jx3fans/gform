@@ -3,7 +3,7 @@ package gform
 import (
 	"errors"
 	"fmt"
-	"github.com/Ribtoks/winapi4go"
+	"github.com/Ribtoks/w32"
 	"syscall"
 )
 

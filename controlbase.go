@@ -1,7 +1,7 @@
 package gform
 
 import (
-	"github.com/Ribtoks/winapi4go"
+	"github.com/Ribtoks/w32"
 )
 
 type ControlBase struct {
