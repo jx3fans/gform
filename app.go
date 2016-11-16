@@ -16,7 +16,7 @@ func Init() {
 	initCtrls.DwSize = uint32(unsafe.Sizeof(initCtrls))
 	initCtrls.DwICC =
 		w32.ICC_LISTVIEW_CLASSES | w32.ICC_PROGRESS_CLASS | w32.ICC_TAB_CLASSES |
-			w32.ICC_TREEVIEW_CLASSES | w32.ICC_BAR_CLASSES
+			w32.ICC_TREEVIEW_CLASSES | w32.ICC_BAR_CLASSES | w32.ICC_STANDARD_CLASSES
 
 	w32.InitCommonControlsEx(&initCtrls)
 }
