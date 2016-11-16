@@ -1,47 +1,60 @@
 package main
 
 import (
-    "github.com/Ribtoks/gform"
-    "time"
+  "github.com/Ribtoks/gform"
+  "time"
+  "strconv"
 )
 
 var (
-    pb  *gform.ProgressBar
-    btn *gform.PushButton
+  pb  *gform.ProgressBar
+  btn *gform.PushButton
+  lb *gform.Label
 )
 
 func onclick(arg *gform.EventArg) {
-    go setProgress()
+  go setProgress()
 }
 
 func setProgress() {
-    btn.SetEnabled(false)
-    for i := 0; i < 100; i++ {
-        pb.SetValue(uint32(i))
-        time.Sleep(50 * 1E6)
-    }
-    btn.SetEnabled(true)
-    pb.SetValue(0)
+  btn.SetEnabled(false)
+  for i := 0; i < 100; i++ {
+    pb.SetValue(uint32(i))
+    lb.SetCaption("Done: " + strconv.Itoa(i) + "%")
+    time.Sleep(50 * 1E6)
+  }
+  btn.SetEnabled(true)
+  pb.SetValue(0)
 }
 
 func main() {
-    gform.Init()
+  gform.Init()
 
-    mw := gform.NewForm(nil)
-    mw.SetPos(300, 100)
-    mw.SetSize(500, 300)
-    mw.SetCaption("Multi thread demo")
+  mw := gform.NewForm(nil)
+  mw.SetSize(360, 170)
+  mw.SetCaption("Progress bar")
+  mw.EnableMaxButton(false)
+  mw.EnableSizable(false)
+  mw.OnClose().Bind(func (arg *gform.EventArg) {
+    gform.Exit()
+  });
 
-    btn = gform.NewPushButton(mw)
-    btn.SetPos(10, 10)
-    btn.SetCaption("Click me")
-    btn.OnLBUp().Bind(onclick)
+  lb = gform.NewLabel(mw)
+  lb.SetPos(21, 10)
+  lb.SetSize(300, 25)
+  lb.SetCaption("Installing...")
 
-    pb = gform.NewProgressBar(mw)
-    pb.SetPos(10, 40)
-    pb.SetSize(300, 25)
+  pb = gform.NewProgressBar(mw)
+  pb.SetPos(20, 35)
+  pb.SetSize(300, 25)
 
-    mw.Show()
+  btn = gform.NewPushButton(mw)
+  btn.SetPos(220, 80)
+  btn.SetCaption("Run")
+  btn.OnLBUp().Bind(onclick)
 
-    gform.RunMainLoop()
+  mw.Show()
+  mw.Center()
+
+  gform.RunMainLoop()
 }
