@@ -68,7 +68,7 @@ func generalWndProc(hwnd w32.HWND, msg uint32, wparam, lparam uintptr) uintptr {
 				}
 			}
 		case w32.WM_CLOSE:
-      if ret != 0 {
+      if ret == 0 {
         controller.OnClose().Fire(NewEventArg(controller, nil))
       }
 		case w32.WM_KILLFOCUS:
