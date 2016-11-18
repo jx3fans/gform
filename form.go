@@ -86,7 +86,7 @@ func (this *Form) WndProc(msg uint32, wparam, lparam uintptr) uintptr {
 		}
 	case w32.WM_CLOSE:
 		this.onClose.Fire(NewEventArg(this, nil))
-		return 0
+		return 1
 	case w32.WM_DESTROY:
 		w32.PostQuitMessage(0)
 		return 0
