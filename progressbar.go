@@ -8,6 +8,14 @@ type ProgressBar struct {
     W32Control
 }
 
+func AttachProgressBar(parent Controller, id int32) *ProgressBar {
+	prb := new(ProgressBar)
+	prb.attach(parent, id)
+	RegMsgHandler(prb)
+
+	return prb
+}
+
 func NewProgressBar(parent Controller) *ProgressBar {
     pb := new(ProgressBar)
     pb.init(parent)
