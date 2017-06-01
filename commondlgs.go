@@ -1,9 +1,10 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
 	"syscall"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 func genOFN(parent Controller, title, filter string, filterIndex uint, initialDir string, buf []uint16) *w32.OPENFILENAME {

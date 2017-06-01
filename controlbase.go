@@ -1,7 +1,7 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
+	"github.com/jx3fans/w32"
 )
 
 type ControlBase struct {
@@ -78,7 +78,7 @@ func (this *ControlBase) Size() (width, height int32) {
 	rect := w32.GetWindowRect(this.hwnd)
 	width = rect.Right - rect.Left
 	height = rect.Bottom - rect.Top
-  return
+	return
 }
 
 func (this *ControlBase) Width() int32 {

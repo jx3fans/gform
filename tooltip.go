@@ -1,9 +1,10 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
 	"syscall"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 type ToolTip struct {

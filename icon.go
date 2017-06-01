@@ -3,8 +3,9 @@ package gform
 import (
 	"errors"
 	"fmt"
-	"github.com/Ribtoks/w32"
 	"syscall"
+
+	"github.com/jx3fans/w32"
 )
 
 type Icon struct {

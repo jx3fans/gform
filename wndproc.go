@@ -1,8 +1,9 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 func genPoint(p uintptr) (x, y int) {
@@ -68,9 +69,9 @@ func generalWndProc(hwnd w32.HWND, msg uint32, wparam, lparam uintptr) uintptr {
 				}
 			}
 		case w32.WM_CLOSE:
-      if ret == 0 {
-        controller.OnClose().Fire(NewEventArg(controller, nil))
-      }
+			if ret == 0 {
+				controller.OnClose().Fire(NewEventArg(controller, nil))
+			}
 		case w32.WM_KILLFOCUS:
 			controller.OnKillFocus().Fire(NewEventArg(controller, nil))
 		case w32.WM_SETFOCUS:

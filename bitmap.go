@@ -2,8 +2,9 @@ package gform
 
 import (
 	"errors"
-	"github.com/Ribtoks/w32"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 type Bitmap struct {

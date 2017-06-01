@@ -1,23 +1,23 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
+	"github.com/jx3fans/w32"
 )
 
 type RawMsg struct {
-    Hwnd           w32.HWND
-    Msg            uint32
-    WParam, LParam uintptr
+	Hwnd           w32.HWND
+	Msg            uint32
+	WParam, LParam uintptr
 }
 
 type MouseEventData struct {
-    X, Y   int
-    Button int
-    Wheel  int
+	X, Y   int
+	Button int
+	Wheel  int
 }
 
 type DropFilesEventData struct {
-    X, Y  int
+	X, Y  int
 	Files []string
 }
 

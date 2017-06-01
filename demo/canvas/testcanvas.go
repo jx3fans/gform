@@ -2,8 +2,9 @@ package main
 
 import (
 	"syscall"
-	"github.com/Ribtoks/gform"
-	"github.com/Ribtoks/w32"
+
+	"github.com/jx3fans/gform"
+	"github.com/jx3fans/w32"
 )
 
 const IDR_PNG1 = 100

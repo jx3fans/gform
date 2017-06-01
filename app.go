@@ -1,8 +1,9 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 func Init() {

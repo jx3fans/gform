@@ -1,8 +1,9 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
 	"syscall"
+
+	"github.com/jx3fans/w32"
 )
 
 const (

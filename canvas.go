@@ -2,7 +2,8 @@ package gform
 
 import (
 	"fmt"
-	"github.com/Ribtoks/w32"
+
+	"github.com/jx3fans/w32"
 )
 
 type Canvas struct {

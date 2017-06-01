@@ -1,7 +1,7 @@
 package gform
 
 import (
-	"github.com/Ribtoks/w32"
+	"github.com/jx3fans/w32"
 )
 
 type Rect struct {

@@ -2,9 +2,10 @@ package gform
 
 import (
 	"fmt"
-	"github.com/Ribtoks/w32"
 	"syscall"
 	"unsafe"
+
+	"github.com/jx3fans/w32"
 )
 
 func internalTrackMouseEvent(hwnd w32.HWND) {
